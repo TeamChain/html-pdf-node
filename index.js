@@ -16,7 +16,7 @@ async function generatePdf(file, options, callback) {
 
   const browser = await puppeteer.launch({
     headless: true,
-    ignoreDefaultArgs: ['--disable-extensions'],
+    args: ['--use-gl=egl'],
   });
   const page = await browser.newPage();
 
@@ -58,7 +58,7 @@ async function generatePdfs(files, options, callback) {
   }
   const browser = await puppeteer.launch({
     headless: true,
-    ignoreDefaultArgs: ['--disable-extensions'],
+    args: ['--use-gl=egl'],
   });
   let pdfs = [];
   const page = await browser.newPage();
